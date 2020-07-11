@@ -1,0 +1,23 @@
+--
+-- @file ventas.dml
+--
+-- @brief Datos solo de prueba para el esquema ventas, no ejecutar en el servidor.
+--
+-- @author Josué Gutiérrez Quino <josuandroidg7@gmail.com>
+--
+--
+
+-- Clientes de prueba
+insert into ventas.clientes ( nombre_cliente, mail, celular, fecha_inicio_cliente ) values ( 'Juancito Pinto', 'aeaman@gmail.com', '6093123', now() );
+insert into ventas.clientes ( nombre_cliente, mail, celular, fecha_inicio_cliente ) values ( 'Abelardo Perez', 'abed@gmail.com', '6093121', now() );
+
+-- Productos de prueba
+insert into ventas.productos ( producto, descripcion, costo_unitario ) values ( 'Netflix',       'Videos de netflix', 15.0 );
+insert into ventas.productos ( producto, descripcion, costo_unitario ) values ( 'Spotify',       'Musica',            13.0 );
+insert into ventas.productos ( producto, descripcion, costo_unitario ) values ( 'Amazon Prime',  'Videos nuevos',     12.0 );
+insert into ventas.productos ( producto, descripcion, costo_unitario ) values ( 'Blim',          'Videos mexicanos',  20.5 );
+
+
+-- Ventas de prueba
+insert into ventas.ventas ( id_cliente, id_producto, id_unidad_tiempo, tiempo_uso, fecha_inicio ) values ( 1, 1, 1, 30, now() );
+insert into ventas.ventas ( id_cliente, id_producto, id_unidad_tiempo, tiempo_uso, fecha_inicio ) values ( 2, 3, 1, 30, now() );

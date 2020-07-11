@@ -1,0 +1,31 @@
+--
+-- @file security.dml
+--
+-- @brief Archivo de configuraciones de la bd en el esquema de seguridad
+--
+-- @author Josué Gutiérrez Quino <josuandroidg7@gmail.com>
+--
+--
+
+with unidadesMedida ( time_units, description ) as (
+    values
+        ( 'Días',  'Evaluación mediante 30 días' ),
+        ( 'Meses', 'Evaluación mediante meses' ),
+        ( 'Anual', 'Evaluación mediante meses' )
+    )
+    select
+        security.crearUnidadTiempo( time_units, description )
+      from
+        unidadesMedida; 
+
+
+
+with rolesBase ( codigo, rol, descripcion ) as (
+    values
+        ( 'A', 'Admin', 'Administrador del sistema' ),
+        ( 'O', 'Operator', 'Operador')
+    )
+    select 
+        security.crearRol( codigo, rol, descripcion )
+      from
+        rolesBase;
